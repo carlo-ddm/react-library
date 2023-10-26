@@ -1,4 +1,3 @@
-```jsx
 import reactImg from "./assets/react-core-concepts.png";
 import { CORE_CONCEPTS } from "./data";
 
@@ -68,4 +67,3 @@ function App() {
 }
 
 export default App;
-```

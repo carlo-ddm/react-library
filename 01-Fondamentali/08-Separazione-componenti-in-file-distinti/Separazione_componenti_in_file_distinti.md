@@ -31,13 +31,13 @@ export default function App() {...}
 - **Import**: Dall'altro lato, quando vuoi utilizzare quel componente in un altro file, lo importi così:
 
 ```jsx
-import Header from './Header';
+import Header from "./Header";
 ```
 
 O se non è un'esportazione predefinita:
 
 ```jsx
-import { CoreConcepts } from './CoreConcepts';
+import { CoreConcepts } from "./CoreConcepts";
 ```
 
 ## Conclusione:
