@@ -22,6 +22,7 @@ function Header() {
   );
 }
 
+// Destrutturazione dell'oggetto props
 function CoreConcepts({ title, description, image }) {
   return (
     <li>
