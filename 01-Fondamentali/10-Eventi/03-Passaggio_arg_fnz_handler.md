@@ -22,7 +22,7 @@ Ecco come è stato implementato nel tuo codice:
 
 ```jsx
 function App() {
-  function clickHandler(selectedButton) {
+  function handleSelect(selectedButton) {
     console.log(selectedButton);
   }
 
@@ -46,12 +46,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TapButton onSelect={() => clickHandler("Components")}>
+            <TapButton onSelect={() => handleSelect("Components")}>
               Components
             </TapButton>
-            <TapButton onSelect={() => clickHandler("Jsx")}>Jsx</TapButton>
-            <TapButton onSelect={() => clickHandler("Props")}>Props</TapButton>
-            <TapButton onSelect={() => clickHandler("State")}>State</TapButton>
+            <TapButton onSelect={() => handleSelect("Jsx")}>Jsx</TapButton>
+            <TapButton onSelect={() => handleSelect("Props")}>Props</TapButton>
+            <TapButton onSelect={() => handleSelect("State")}>State</TapButton>
           </menu>
         </section>
       </main>
@@ -62,4 +62,4 @@ function App() {
 export default App;
 ```
 
-In questo esempio, si utilizza una funzione freccia all'interno dell'evento `onSelect` per invocare la funzione `clickHandler` e passare un argomento che rappresenta il nome del pulsante cliccato. Grazie a questo approccio, si ottiene una maggiore flessibilità, consentendo di avere un unico gestore di eventi che può eseguire azioni basate sull'argomento ricevuto.
+In questo esempio, si utilizza una funzione freccia all'interno dell'evento `onSelect` per invocare la funzione `handleSelect` e passare un argomento che rappresenta il nome del pulsante cliccato. Grazie a questo approccio, si ottiene una maggiore flessibilità, consentendo di avere un unico gestore di eventi che può eseguire azioni basate sull'argomento ricevuto.
