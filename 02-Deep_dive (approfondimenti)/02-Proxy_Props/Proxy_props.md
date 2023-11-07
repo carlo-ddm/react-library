@@ -47,7 +47,7 @@ Ecco come funziona:
 ```jsx
 const Section = ({ title, children, ...rest }) => {
   return (
-    <section {...rest}>
+    <section {...rest}> // id
       <h3>{title}</h3>
       {children}
     </section>
