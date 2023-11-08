@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export default function Player({ name, symbol }) {
+export default function Player({ defaultName, symbol }) {
   const [editMode, setEditMode] = useState(false);
-  const [playerName, setPlayerName] = useState(name);
+  const [playerName, setPlayerName] = useState(defaultName);
 
   const editModeHandler = () => {
     setEditMode((prevMode) => !prevMode);
@@ -14,13 +14,15 @@ export default function Player({ name, symbol }) {
 
   let nameField = <span className="player-name">{playerName}</span>;
 
-  let buttonField = <button onClick={editModeHandler}>Edit</button>;
-
   if (editMode) {
     nameField = (
-      <input type="text" value={playerName} onChange={playerNameHandler} />
+      <input
+        type="text"
+        value={playerName}
+        onChange={playerNameHandler}
+        required
+      />
     );
-    buttonField = <button onClick={editModeHandler}>Confirm</button>;
   }
 
   return (
@@ -28,7 +30,7 @@ export default function Player({ name, symbol }) {
       <span className="player">
         {nameField}
         <span className="player-symbol">{symbol}</span>
-        {buttonField}
+        <button onClick={editModeHandler}>{!editMode ? "Edit" : "Save"}</button>
       </span>
     </li>
   );
