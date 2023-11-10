@@ -1,17 +1,27 @@
+import { useState } from "react";
 import Player from "./Player";
 import GameBoard from "./GameBoard";
+import Log from "./Log";
 
 function App() {
+  const [activePlayer, setActivePlayer] = useState('X');
+
+  const handleUpdateSymbol = () => {
+    setActivePlayer(curActivSymbol => {
+      return curActivSymbol === 'X' ? 'O' : 'X';
+    });
+  };
+
   return (
     <main>
       <div id="game-container">
-        <ol id="players">
-          <Player defaultName="Player 1" symbol="X" />
-          <Player defaultName="Player 2" symbol="O" />
+        <ol id="players" className="highlight-player">
+          <Player defaultName="Player 1" isActive={activePlayer === 'X'} />
+          <Player defaultName="Player 2" isActive={activePlayer === 'O'}/>
         </ol>
-        <GameBoard />
+        <GameBoard onSelectSquare={handleUpdateSymbol} symbol={activePlayer}/>
       </div>
-      Log
+      <Log />
     </main>
   );
 }
