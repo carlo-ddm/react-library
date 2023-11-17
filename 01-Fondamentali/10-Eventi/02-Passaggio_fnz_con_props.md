@@ -40,9 +40,6 @@ Il passaggio delle funzioni attraverso le `props` è un pattern fondamentale in 
 
 Capisco, grazie per il chiarimento. Riformulerò la documentazione focalizzandomi su come l'evento scatenato nel componente figlio attiva una funzione definita nel componente genitore. Evidenzierò anche che in entrambi gli scenari la funzione è definita nel genitore, ma il punto di attivazione varia.
 
-<!-- **********************************************************************
- -->
-
 ## Documentazione: Gestione di Eventi e Funzioni tra Componenti Genitore e Figlio in React
 
 In React, un modello comune è quello di definire funzioni nel componente genitore e poi utilizzarle nei componenti figli. Questo può essere fatto in due modi: 1) associando la funzione direttamente a un evento nel componente figlio, o 2) avviando la funzione nel componente figlio in risposta a un evento, ma passando parametri specifici. Esamineremo entrambi gli approcci.
