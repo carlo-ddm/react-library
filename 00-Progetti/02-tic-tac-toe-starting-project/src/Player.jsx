@@ -1,11 +1,14 @@
 import { useState } from "react";
 
-export default function Player({ defaultName, symbol, isActive }) {
+export default function Player({ defaultName, symbol, isActive, nameHandler }) {
   const [editMode, setEditMode] = useState(false);
   const [playerName, setPlayerName] = useState(defaultName);
 
   const editModeHandler = () => {
     setEditMode((prevMode) => !prevMode);
+    if (editMode) {
+      nameHandler(symbol, playerName)
+    }
   };
 
   const playerNameHandler = (props) => {

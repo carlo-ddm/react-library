@@ -5,7 +5,6 @@ import Log from "./Log";
 import GameOver from "./GameOver";
 import { WINNING_COMBINATIONS } from "./winning-combination";
 
-
 const initialGameBoard = [
   [null, null, null],
   [null, null, null],
@@ -14,12 +13,16 @@ const initialGameBoard = [
 
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
+  const [playerNames, setPlayerNames] = useState({
+    X: "Players 1",
+    O: "Players 2",
+  });
 
   let activePlayer = deriveActivePlayer(gameTurns);
 
   // ***
 
-  let gameBoard = [...initialGameBoard.map(innerArray => [...innerArray])];
+  let gameBoard = [...initialGameBoard.map((innerArray) => [...innerArray])];
 
   gameTurns.forEach((turn) => {
     const { square, player } = turn;
@@ -71,6 +74,15 @@ function App() {
     setGameTurns([]);
   }
 
+  function handlePlayerNames(symbol, name) {
+    setPlayerNames((prevNames) => {
+      return {
+        ...prevNames,
+        [symbol]: name,
+      };
+    });
+  }
+
   return (
     <main>
       <div id="game-container">
@@ -79,14 +91,18 @@ function App() {
             defaultName="Player 1"
             symbol="X"
             isActive={activePlayer === "X"}
+            onChangeName={handlePlayerNames}
           />
           <Player
             defaultName="Player 2"
             symbol="O"
             isActive={activePlayer === "O"}
+            onChangeName={handlePlayerNames}
           />
         </ol>
-        {(winner || hasDraw) && <GameOver winner={winner} restart={rematchHandler}/>}
+        {(winner || hasDraw) && (
+          <GameOver winner={winner} restart={rematchHandler} />
+        )}
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
       </div>
       <Log turns={gameTurns} />
