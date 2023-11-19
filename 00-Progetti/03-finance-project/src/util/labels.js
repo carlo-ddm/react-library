@@ -1,6 +1,6 @@
 export const _INPUT_LABELS = [
-  ["initial investment", "annual investment"],
-  ["expected return", "duration"],
+  ["Initial Investment", "Annual Investment"],
+  ["Expected Return", "Duration"],
 ];
 
 export const _SUMMARY_LABELS = {

@@ -7,10 +7,15 @@ import { _SUMMARY_LABELS } from "./util/labels";
 import { useState } from "react";
 
 function App() {
-  const [summary, setSummary] = useState({ ..._SUMMARY_LABELS });
+  const [inputs, setInputs] = useState();
 
-  function valueHandler(controlResult) {
-    console.log(controlResult);
+  function valueHandler(inputResult) {
+    const key = inputResult.control;
+    const value = inputResult.value;
+    setInputs((prevObjsResult) => {
+      return { ...prevObjsResult, key: value };
+    });
+    console.log(inputs);
   }
 
   return (

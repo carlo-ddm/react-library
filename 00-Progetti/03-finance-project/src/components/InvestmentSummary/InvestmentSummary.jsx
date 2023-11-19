@@ -1,6 +1,5 @@
 import "./InvestmentSummary.css";
 export default function InvestmentSummary({ summary }) {
-  console.log(summary);
   return (
     <table id="result">
       <thead>
