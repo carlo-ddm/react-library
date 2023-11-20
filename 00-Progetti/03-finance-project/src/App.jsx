@@ -11,17 +11,43 @@ function App() {
   const [inputs, setInputs] = useState({});
 
   function valueHandler(inputResult) {
-    console.log(inputs);
     const key = inputResult.control;
     const value = inputResult.value;
-    setInputs((prevObjsResult) => {
-      console.log(prevObjsResult);
-      return { ...prevObjsResult, [key]: value };
+
+    setInputs((prevInputs) => {
+      const updatedInputs = { ...prevInputs, [key]: value };
+      const desiredOrder = [
+        "Initial Investment",
+        "Annual Investment",
+        "Expected Return",
+        "Duration",
+      ];
+      const orderedInputs = {};
+      for (const orderKey of desiredOrder) {
+        if (updatedInputs[orderKey] !== undefined) {
+          orderedInputs[orderKey] = updatedInputs[orderKey];
+        }
+      }
+      return orderedInputs;
     });
   }
 
-  // function resultsObjCreator(inputs) {
-  // }
+  function calculateResults() {
+    if (Object.keys(inputs).length === 4 && "Duration" in inputs) {
+      // Assicurati che i valori siano convertiti correttamente in numeri
+      const inputValues = {
+        initialInvestment: Number(inputs["Initial Investment"]),
+        annualInvestment: Number(inputs["Annual Investment"]),
+        expectedReturn: Number(inputs["Expected Return"]),
+        duration: Number(inputs["Duration"]),
+      };
+
+      return calculateInvestmentResults(inputValues);
+    }
+    return {};
+  }
+
+  const results = calculateResults();
 
   return (
     <>
@@ -37,15 +63,7 @@ function App() {
           />
         ))}
       </Controller>
-      <InvestmentSummary
-        summary={_SUMMARY_LABELS}
-        inputResults={
-          Object.keys(inputs).length === 4 &&
-          Object.keys(inputs).includes("Duration")
-            ? inputs
-            : {}
-        }
-      />
+      <InvestmentSummary summary={_SUMMARY_LABELS} inputResults={results} />
     </>
   );
 }
