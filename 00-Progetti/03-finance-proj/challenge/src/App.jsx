@@ -44,7 +44,7 @@ function App() {
 
       return calculateInvestmentResults(inputValues);
     }
-    return {};
+    return [];
   }
 
   const results = calculateResults();
@@ -63,7 +63,7 @@ function App() {
           />
         ))}
       </Controller>
-      <InvestmentSummary summary={_SUMMARY_LABELS} inputResults={results} />
+      <InvestmentSummary summary={_SUMMARY_LABELS} inputResults={results ? results : []} />
     </>
   );
 }
