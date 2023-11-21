@@ -40,7 +40,7 @@ I CSS Modules offrono una soluzione elegante al problema dello scoping degli sti
 #### Conclusione
 I CSS Modules rappresentano un approccio potente e scalabile per gestire gli stili in applicazioni React. Offrono lo scoping locale delle classi CSS, migliorando la modularità e riducendo i rischi di conflitti di stile, rendendo la manutenzione e lo sviluppo più efficienti.
 
-----
+---
 
 #### Inserimento Dinamico di Classi Scoped con CSS Modules
 
