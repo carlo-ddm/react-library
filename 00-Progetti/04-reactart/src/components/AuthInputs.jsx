@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { styled } from "styled-components";
+import StyledButton from "./Button";
+import CustomInputs from "./Inputs";
 
 const ControlContainer = styled.div`
   display: flex;
@@ -30,36 +32,32 @@ export default function AuthInputs() {
 
   return (
     <div id="auth-inputs">
-      <ControlContainer> //  className="controls" non più necessario - Nota: prima c'era un div
-        <p>
-          <label>Email</label>
-          <input
-            type="email"
-            className={emailNotValid && "invalid"}
-            onChange={(event) => handleInputChange("email", event.target.value)}
-          />
-        </p>
-        <p>
-          <label className={`invalid ${emailNotValid ? "invalid" : ""}`}>
-            Password
-          </label>
-          {/* <label className={`invalid ${emailNotValid && 'invalid'}`}>Password</label> */}
-          <input
+      <ControlContainer>
+        <CustomInputs
+          type="email"
+          label="Email"
+          invalid={emailNotValid}
+          onChange={(event) => handleInputChange("email", event.target.value)}
+        />
+
+
+          <CustomInputs
             type="password"
-            className={passwordNotValid ? "invalid" : undefined}
+            label="Password"
+            invalid={passwordNotValid}
             onChange={(event) =>
               handleInputChange("password", event.target.value)
             }
           />
-        </p>
+
       </ControlContainer>
       <div className="actions">
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <button className="button" onClick={handleLogin}>
+        <StyledButton className="button" onClick={handleLogin}>
           Sign In
-        </button>
+        </StyledButton>
       </div>
     </div>
   );
