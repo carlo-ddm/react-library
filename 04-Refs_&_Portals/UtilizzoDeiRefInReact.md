@@ -71,7 +71,7 @@ Sebbene i Ref possano semplificare alcune operazioni, è essenziale utilizzarli 
 
 ---
 
-#### Differenza tra State e Ref in React
+### Differenza tra State e Ref in React
 
 La differenza fondamentale tra lo stato (State) e i riferimenti (Refs) in React è il loro impatto sulla valutazione e il rendering dei componenti:
 
