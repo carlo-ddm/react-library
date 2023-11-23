@@ -113,3 +113,39 @@ function ContatoreClic() {
 ```
 
 Nell'esempio, ogni clic sul pulsante incrementa il `contaClic.current` ma non causa un aggiornamento dell'interfaccia utente. La funzione del componente `ContatoreClic` non viene rieseguita, e il componente non viene ri-renderizzato, nonostante il valore di `contaClic` cambi.
+
+---
+
+### Documentazione: Utilizzo Avanzato dei Ref in React con `forwardRef`
+
+#### Introduzione
+I Ref in React possono essere utilizzati in combinazione con `forwardRef` per gestire comportamenti complessi all'interno dei componenti. `forwardRef` permette di passare Ref a componenti figli, consentendo operazioni avanzate come il controllo diretto di elementi del DOM.
+
+#### Esempio di Utilizzo di `forwardRef`
+```jsx
+import React, { forwardRef, useRef, useState } from 'react';
+
+const ComponenteFiglio = forwardRef((props, ref) => {
+  // Logica del componente che può utilizzare ref
+  return <input ref={ref} type="text" {...props} />;
+});
+
+function ComponenteGenitore() {
+  const inputRef = useRef();
+
+  const attivaFocus = () => {
+    inputRef.current.focus(); // Uso del ref per controllare il componente figlio
+  };
+
+  return (
+    <>
+      <ComponenteFiglio ref={inputRef} />
+      <button onClick={attivaFocus}>Focalizza Input</button>
+    </>
+  );
+}
+```
+In questo esempio, `ComponenteFoglio` riceve un Ref dal suo genitore attraverso `forwardRef`. Il genitore può quindi interagire con l'input controllato da `ComponenteFoglio` usando `inputRef`, ad esempio per impostare il focus.
+
+#### Conclusione
+L'uso di `forwardRef` in combinazione con i Ref offre un controllo avanzato e flessibile dei componenti, estendendo notevolmente le possibilità di interazione con il DOM in un'applicazione React.
