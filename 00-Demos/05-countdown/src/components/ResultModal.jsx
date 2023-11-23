@@ -9,7 +9,7 @@ const ResultModal = forwardRef(function ResultModal(
   useImperativeHandle(ref, () => {
     return {
       open() {
-        dialog.current.showModal();
+        // dialog.current.showModal();
       },
     };
   });

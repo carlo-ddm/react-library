@@ -11,19 +11,19 @@ export default function TimerChallenge({ title, targetTime }) {
   if (timeRemaning <= 0) {
     clearInterval(timer.current);
     setTimeRemaning(targetTime * 1000);
-    dialog.current.open();
+    dialog.current.showModal();
   }
 
   function handleStart() {
     timer.current = setInterval(() => {
       setTimeRemaning((prevTimeRemaning) => prevTimeRemaning - 10);
       // dialog.current.showModal();
-      dialog.current.open();
+      dialog.current.showModal();
     }, 10);
   }
 
   function handleStop() {
-    dialog.current.open();
+    dialog.current.showModal();
     timer.current = clearInterval(timer.current);
   }
 
