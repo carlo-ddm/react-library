@@ -1,6 +1,13 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useImperativeHandle } from "react";
 
-const ResultModal = forwardRef(({ timerExpired, targetTime }, ref) => {
+const ResultModal = forwardRef(({ targetTime }, ref) => {
+  useImperativeHandle(ref, () => {
+    return {
+      open() {
+        dialog.current.showModal();
+      },
+    };
+  });
   return (
     <dialog ref={ref} className="result-modal">
       <h2>
