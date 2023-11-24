@@ -40,24 +40,20 @@ export default function AuthInputs() {
           onChange={(event) => handleInputChange("email", event.target.value)}
         />
 
-
-          <CustomInputs
-            type="password"
-            label="Password"
-            invalid={passwordNotValid}
-            onChange={(event) =>
-              handleInputChange("password", event.target.value)
-            }
-          />
-
+        <CustomInputs
+          type="password"
+          label="Password"
+          invalid={passwordNotValid}
+          onChange={(event) =>
+            handleInputChange("password", event.target.value)
+          }
+        />
       </ControlContainer>
       <div className="actions">
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <StyledButton className="button" onClick={handleLogin}>
-          Sign In
-        </StyledButton>
+        <StyledButton onClick={handleLogin}>Sign In</StyledButton>
       </div>
     </div>
   );

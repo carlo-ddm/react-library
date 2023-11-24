@@ -1,8 +1,21 @@
+// Components
+import Main from "./components/Main";
+import Sidebar from "./components/Sidebar";
+import NoProjectSelected from "./components/NoProjectSelected";
+
+import { useState } from "react";
 function App() {
+  const [isProjectAddedClicked, setIsProjectAddedClicked] = useState(false);
+
+  function handleProjectAdded() {
+    setIsProjectAddedClicked(true);
+  }
+
   return (
-    <>
-      <h1 className="my-8 text-center text-5xl font-bold">Hello World</h1>
-    </>
+    <Main>
+      <Sidebar clicked={handleProjectAdded} />
+      {!isProjectAddedClicked && <NoProjectSelected />}
+    </Main>
   );
 }
 

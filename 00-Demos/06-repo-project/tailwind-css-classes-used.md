@@ -9,8 +9,7 @@ Throughout this section, I'll use quite a few **Tailwind CSS** classes to style 
 I'll use the following CSS classes (and elements) in my solution. You can look up those Tailwind classes in the [official docs](https://tailwindcss.com/docs/utility-first) to understand what they do. Many of those class names might also be self-explanatory though.
 
 ```jsx
-<main className="h-screen my-8 flex gap-8">...</main>
-<button className="px-4 py-2 text-xs md:text-base rounded-md bg-stone-700 text-stone-400 hover:bg-stone-600 hover:text-stone-100">...</button>
+
 <input className="w-full p-1 border-b-2 rounded-sm border-stone-300 bg-stone-200 text-stone-600 focus:outline-none focus:border-stone-600" />
 <p className="flex flex-col gap-1 my-4">...</p>
 <label className="text-sm font-bold uppercase text-stone-500">...</label>
@@ -27,10 +26,8 @@ I'll use the following CSS classes (and elements) in my solution. You can look u
 <button className="text-stone-700 hover:text-stone-950">...</button>
 <div className="mt-24 text-center w-2/3">
 <img className="w-16 h-16 object-contain mx-auto" />
-<h2 className="text-xl font-bold text-stone-500 my-4">...</h2>
 <p className="text-stone-400 mb-4">...</p>
 <p className="mt-8">...</p>
-<aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-r-xl">
 <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">...</h2>
 <ul className="mt-8">...</ul>
 <button className="w-full text-left px-2 py-1 rounded-sm my-1 hover:text-stone-200 hover:bg-stone-800">...</button>
@@ -46,4 +43,13 @@ I'll use the following CSS classes (and elements) in my solution. You can look u
 <ul className="p-4 mt-8 rounded-md bg-stone-100">...</ul>
 <li className="flex justify-between my-4">...</li>
 <button className="text-stone-700 hover:text-red-500">...</button>
+```
+
+
+Used:
+```jsx
+<main className="h-screen my-8 flex gap-8">...</main>
+<aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-r-xl">
+<h2 className="text-xl font-bold text-stone-500 my-4">...</h2>
+<button className="px-4 py-2 text-xs md:text-base rounded-md bg-stone-700 text-stone-400 hover:bg-stone-600 hover:text-stone-100">...</button>
 ```
