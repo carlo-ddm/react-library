@@ -6,7 +6,7 @@ export default function Sidebar({ clicked }) {
         your projects
       </h2>
       <div>
-        <Button clickedFunc={clicked} content="+ Add Project" />
+        <Button content="+ Add Project" variant="primary" clickedFunc={clicked}  />
       </div>
     </aside>
   );
