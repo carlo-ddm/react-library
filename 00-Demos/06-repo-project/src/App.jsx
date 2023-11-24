@@ -14,7 +14,7 @@ function App() {
   return (
     <Main>
       <Sidebar clicked={handleProjectAdded} />
-      {!isProjectAddedClicked && <NoProjectSelected />}
+      {!isProjectAddedClicked && <NoProjectSelected clicked={handleProjectAdded}/>}
     </Main>
   );
 }
