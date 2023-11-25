@@ -4,13 +4,17 @@ import Sidebar from "./components/Sidebar";
 import NoProjectSelected from "./components/NoProjectSelected";
 import NewProject from "./components/NewProject";
 
-import { forwardRef, useRef, useState } from "react";
-const App = forwardRef(function App() {
+import { useState } from "react";
+export default function App() {
   const [isProjectAddedClicked, setIsProjectAddedClicked] = useState(false);
+  const [projects, setProjects] = useState([]);
 
   function handleProjectCreation(value, proj) {
     setIsProjectAddedClicked(value);
-    console.log(proj);
+    if (proj !== undefined) {
+      setProjects((prevState) => [...prevState, proj]);
+    }
+    console.log(projects);
   }
 
   return (
@@ -19,11 +23,7 @@ const App = forwardRef(function App() {
       {!isProjectAddedClicked && (
         <NoProjectSelected clicked={handleProjectCreation} />
       )}
-      {isProjectAddedClicked && (
-        <NewProject clicked={handleProjectCreation} />
-      )}
+      {isProjectAddedClicked && <NewProject clicked={handleProjectCreation} />}
     </Main>
   );
-});
-
-export default App;
+}

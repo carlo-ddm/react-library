@@ -1,4 +1,4 @@
-export default function Button({ content, variant, clickedFunc }) {
+export default function Button({ content, variant, clickedFunc, disabled }) {
   function detectButtonClassNames() {
     switch (variant) {
       case "primary":
@@ -11,7 +11,7 @@ export default function Button({ content, variant, clickedFunc }) {
     }
   }
   return (
-    <button onClick={clickedFunc} className={detectButtonClassNames()}>
+    <button onClick={clickedFunc} className={detectButtonClassNames()} disabled={disabled}>
       {content}
     </button>
   );

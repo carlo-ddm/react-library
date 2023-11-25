@@ -6,7 +6,11 @@ export default function Sidebar({ clicked }) {
         your projects
       </h2>
       <div>
-        <Button content="+ Add Project" variant="primary" clickedFunc={() => clicked(true)}  />
+        <Button
+          content="+ Add Project"
+          variant="primary"
+          clickedFunc={() => clicked(true, undefined)}
+        />
       </div>
     </aside>
   );

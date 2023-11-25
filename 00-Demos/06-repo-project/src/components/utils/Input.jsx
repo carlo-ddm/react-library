@@ -1,6 +1,6 @@
 import { useRef, useImperativeHandle, forwardRef } from "react";
 
-const Input = forwardRef(function Input({ label, textarea, ...props }, ref) {
+const Input = forwardRef(function Input({change, label, textarea, ...props }, ref) {
   const val = useRef();
   useImperativeHandle(ref, () => ({
     getValue() {
@@ -17,9 +17,9 @@ const Input = forwardRef(function Input({ label, textarea, ...props }, ref) {
         {label}
       </label>
       {textarea ? (
-        <textarea className={sharedFieldsClass} ref={val} {...props} />
+        <textarea onChange={change} className={sharedFieldsClass} ref={val} {...props} />
       ) : (
-        <input className={sharedFieldsClass} ref={val} {...props} />
+        <input onChange={change} className={sharedFieldsClass} ref={val} {...props} />
       )}
     </p>
   );
