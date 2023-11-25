@@ -11,7 +11,11 @@ export default function Button({ content, variant, clickedFunc, disabled }) {
     }
   }
   return (
-    <button onClick={clickedFunc} className={detectButtonClassNames()} disabled={disabled}>
+    <button
+      onClick={clickedFunc}
+      className={detectButtonClassNames()}
+      disabled={disabled}
+    >
       {content}
     </button>
   );

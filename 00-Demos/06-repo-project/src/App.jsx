@@ -14,12 +14,11 @@ export default function App() {
     if (proj !== undefined) {
       setProjects((prevState) => [...prevState, proj]);
     }
-    console.log(projects);
   }
 
   return (
     <Main>
-      <Sidebar clicked={handleProjectCreation} />
+      <Sidebar clicked={handleProjectCreation} arrProj={projects} />
       {!isProjectAddedClicked && (
         <NoProjectSelected clicked={handleProjectCreation} />
       )}
