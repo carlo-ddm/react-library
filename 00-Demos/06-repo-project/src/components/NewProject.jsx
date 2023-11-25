@@ -24,20 +24,17 @@ export default function NewProject({ clicked }) {
       id = dueDateRef;
     }
     setProjects((prevState) => {
-      return {
+      const updatedState = {
         ...prevState,
         [identifier]: id.current.getValue(),
       };
-    });
+      const allFieldsFilled = Object.values(updatedState).every(
+        (value) => value.length > 0
+      );
+      setButtonEnabled(!allFieldsFilled);
 
-    Object.values(project).map((el) => {
-      let isDisabled = true;
-      if (el.length > 0) {
-        setButtonEnabled(false);
-      }
+      return updatedState;
     });
-
-    console.log(project);
   }
 
   return (
