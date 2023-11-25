@@ -7,12 +7,10 @@ import NewProject from "./components/NewProject";
 import { forwardRef, useRef, useState } from "react";
 const App = forwardRef(function App() {
   const [isProjectAddedClicked, setIsProjectAddedClicked] = useState(false);
-  // const [project, setProject] = useState({});
-  const newProject = useRef();
 
-  function handleProjectCreation(value) {
+  function handleProjectCreation(value, proj) {
     setIsProjectAddedClicked(value);
-    console.log(newProject.current);
+    console.log(proj);
   }
 
   return (
@@ -22,7 +20,7 @@ const App = forwardRef(function App() {
         <NoProjectSelected clicked={handleProjectCreation} />
       )}
       {isProjectAddedClicked && (
-        <NewProject clicked={handleProjectCreation} ref={newProject} />
+        <NewProject clicked={handleProjectCreation} />
       )}
     </Main>
   );
