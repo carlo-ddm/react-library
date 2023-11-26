@@ -1,5 +1,5 @@
 import Button from "./utils/Button";
-export default function Sidebar({ arrProj, clicked }) {
+export default function Sidebar({ arrProj, clicked, clickedProj }) {
   return (
     <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-r-xl">
       <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">
@@ -16,7 +16,7 @@ export default function Sidebar({ arrProj, clicked }) {
         <ul className="mt-8">
           {arrProj.map((title) => (
             <li key={title}>
-              <Button content={title} variant="tertiary" />
+              <Button clickedFunc={() => clickedProj(title)} content={title} variant="tertiary" />
             </li>
           ))}
         </ul>

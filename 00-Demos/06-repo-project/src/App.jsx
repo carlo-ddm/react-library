@@ -9,6 +9,7 @@ import { useState } from "react";
 export default function App() {
   const [isProjectAddedClicked, setIsProjectAddedClicked] = useState(false);
   const [projects, setProjects] = useState([]);
+  const [project, setProject] = useState();
 
   function handleProjectCreation(value, proj) {
     setIsProjectAddedClicked(value);
@@ -17,21 +18,31 @@ export default function App() {
     }
   }
 
+  function handleProjectSetter(title) {
+    projects.forEach(project => {
+      if (project.title === title) {
+        setProject(project)
+      }
+      // console.log(project);
+    });
+  }
+
   let displayer = <NoProjectSelected clicked={handleProjectCreation} />;
   if (isProjectAddedClicked) {
     displayer = <NewProject clicked={handleProjectCreation} />;
+  } else if (!isProjectAddedClicked && projects.includes(project)) {
+    displayer = <Project />
   }
 
   return (
     <Main>
       <Sidebar
-        clicked={handleProjectCreation}
         arrProj={projects.map((el) => el.title)}
+        clicked={handleProjectCreation}
+        clickedProj={(title) => {
+          handleProjectSetter(title);
+        }}
       />
-      {/* {!isProjectAddedClicked && (
-        <NoProjectSelected clicked={handleProjectCreation} />
-      )}
-      {isProjectAddedClicked && <NewProject clicked={handleProjectCreation} />} */}
       {displayer}
     </Main>
   );
