@@ -17,14 +17,22 @@ export default function App() {
     }
   }
 
+  let displayer = <NoProjectSelected clicked={handleProjectCreation} />;
+  if (isProjectAddedClicked) {
+    displayer = <NewProject clicked={handleProjectCreation} />;
+  }
 
   return (
     <Main>
-      <Sidebar clicked={handleProjectCreation} arrProj={projects.map(el => el.title)} />
-      {!isProjectAddedClicked && (
+      <Sidebar
+        clicked={handleProjectCreation}
+        arrProj={projects.map((el) => el.title)}
+      />
+      {/* {!isProjectAddedClicked && (
         <NoProjectSelected clicked={handleProjectCreation} />
       )}
-      {isProjectAddedClicked && <NewProject clicked={handleProjectCreation} />}
+      {isProjectAddedClicked && <NewProject clicked={handleProjectCreation} />} */}
+      {displayer}
     </Main>
   );
 }
