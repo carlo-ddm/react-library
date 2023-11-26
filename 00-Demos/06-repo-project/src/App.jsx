@@ -19,19 +19,20 @@ export default function App() {
   }
 
   function handleProjectSetter(title) {
-    projects.forEach(project => {
+    projects.forEach((project) => {
       if (project.title === title) {
-        setProject(project)
+        setProject(project);
       }
-      // console.log(project);
     });
   }
 
-  let displayer = <NoProjectSelected clicked={handleProjectCreation} />;
-  if (isProjectAddedClicked) {
+  let displayer = null;
+  if (isProjectAddedClicked === true) {
     displayer = <NewProject clicked={handleProjectCreation} />;
+  } else if (isProjectAddedClicked === false && !projects.includes(project)) {
+    displayer = <NoProjectSelected clicked={handleProjectCreation} />;
   } else if (!isProjectAddedClicked && projects.includes(project)) {
-    displayer = <Project />
+    displayer = <Project />;
   }
 
   return (
