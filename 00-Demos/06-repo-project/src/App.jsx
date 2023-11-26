@@ -3,6 +3,7 @@ import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
 import NoProjectSelected from "./components/NoProjectSelected";
 import NewProject from "./components/NewProject";
+import Project from "./components/Project";
 
 import { useState } from "react";
 export default function App() {
@@ -16,9 +17,10 @@ export default function App() {
     }
   }
 
+
   return (
     <Main>
-      <Sidebar clicked={handleProjectCreation} arrProj={projects} />
+      <Sidebar clicked={handleProjectCreation} arrProj={projects.map(el => el.title)} />
       {!isProjectAddedClicked && (
         <NoProjectSelected clicked={handleProjectCreation} />
       )}
