@@ -2,7 +2,8 @@ import { createContext } from "react";
 
 export const CartContext = createContext({
     items: [],
-    addItemToCart: () => {}
+    addItemToCart: () => {},
+    updateCartItemQuantity: () => {}
 })
 
 // Maiuscola perché il valore **restituito** da metodo createContext e registrato in costante CartContext sarà in realtà un oggetto che contiene un componente React.
