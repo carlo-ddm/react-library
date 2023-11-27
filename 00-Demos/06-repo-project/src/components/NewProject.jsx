@@ -58,6 +58,7 @@ export default function NewProject({ clicked }) {
       </menu>
       <div>
         <Input
+          type="text"
           change={() => manageChange("title")}
           label="title"
           ref={titleRef}
@@ -69,6 +70,7 @@ export default function NewProject({ clicked }) {
           textarea={true}
         />
         <Input
+          type="date"
           change={() => manageChange("dueDate")}
           label="due date"
           ref={dueDateRef}
