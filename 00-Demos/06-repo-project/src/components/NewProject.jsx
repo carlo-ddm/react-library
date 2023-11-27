@@ -44,14 +44,14 @@ export default function NewProject({ clicked }) {
           <Button
             content="Cancel"
             variant=""
-            clickedFunc={() => clicked(false, undefined)}
+            clickedFunc={() => clicked("cancel", undefined)}
           />
         </li>
         <li>
           <Button
             content="Save"
             variant="secondary"
-            clickedFunc={() => clicked(false, project)}
+            clickedFunc={() => clicked("save", project)}
             disabled={buttonEnabled}
           />
         </li>

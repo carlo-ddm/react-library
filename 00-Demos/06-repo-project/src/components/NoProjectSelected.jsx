@@ -13,7 +13,7 @@ export default function NoProjectSelected({ clicked }) {
       <Button
         content="Create New Project"
         variant="primary"
-        clickedFunc={() => clicked(true)}
+        clickedFunc={() => clicked('add', undefined)}
       />
     </div>
   );

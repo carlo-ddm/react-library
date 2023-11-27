@@ -6,43 +6,55 @@ import NewProject from "./components/NewProject";
 import Project from "./components/Project";
 
 import { useState } from "react";
-export default function App() {
-  const [isProjectAddedClicked, setIsProjectAddedClicked] = useState(false);
-  const [projects, setProjects] = useState([]);
-  const [project, setProject] = useState();
 
-  function handleProjectCreation(value, proj) {
-    setIsProjectAddedClicked(value);
-    if (proj !== undefined) {
-      setProjects((prevState) => [...prevState, proj]);
-    }
+export default function App() {
+  const [isProjectAddedClicked, setIsProjectAddedClicked] = useState({
+    clickType: "",
+    projects: [],
+  });
+  const [index, setIndex] = useState(null);
+
+  // Funzioni Helper
+  function getIndex(index) {
+    console.log(index);
+    setIndex(index);
   }
 
-  function handleProjectSetter(title) {
-    projects.forEach((project) => {
-      if (project.title === title) {
-        setProject(project);
+  function handleProjectCreation(val, proj) {
+    setIsProjectAddedClicked((prevState) => {
+      let projects;
+      if (proj !== undefined && !prevState.projects.includes(proj)) {
+        projects = [...prevState.projects, proj];
+      } else {
+        projects = [...prevState.projects];
       }
+      return {
+        clickType: val,
+        projects: projects,
+      };
     });
   }
 
-  let displayer = null;
-  if (isProjectAddedClicked === true) {
-    displayer = <NewProject clicked={handleProjectCreation} />;
-  } else if (isProjectAddedClicked === false && !projects.includes(project)) {
-    displayer = <NoProjectSelected clicked={handleProjectCreation} />;
-  } else if (!isProjectAddedClicked && projects.includes(project)) {
-    displayer = <Project />;
-  }
+  // Logica di Rendering Condizionale
+  const { clickType } = isProjectAddedClicked;
+  const displayer =
+    clickType === "add" ? (
+      <NewProject clicked={handleProjectCreation} />
+    ) : clickType === "save" ? (
+      <NoProjectSelected clicked={handleProjectCreation} />
+    ) : clickType === "proj" ? (
+      <Project project={isProjectAddedClicked.projects[index]} />
+    ) : (
+      <NoProjectSelected clicked={handleProjectCreation} />
+    );
 
+  // Render del Componente
   return (
     <Main>
       <Sidebar
-        arrProj={projects.map((el) => el.title)}
+        arrProj={[...isProjectAddedClicked.projects]}
         clicked={handleProjectCreation}
-        clickedProj={(title) => {
-          handleProjectSetter(title);
-        }}
+        indexUp={getIndex}
       />
       {displayer}
     </Main>
