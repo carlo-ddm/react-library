@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-
 import Places from "./components/Places.jsx";
 import { AVAILABLE_PLACES } from "./data.js";
 import Modal from "./components/Modal.jsx";
@@ -8,16 +7,14 @@ import logoImg from "./assets/logo.png";
 import { sortPlacesByDistance } from "./loc.js";
 import { useEffect } from "react";
 
-const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
-const storedPlace = storedIds(
-  "selectedPlace",
-  AVAILABLE_PLACES.map((id) => {
-    return AVAILABLE_PLACES.find((place) => place.id === id);
+const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
+const storedPlace = storedIds.map((id) =>
+  AVAILABLE_PLACES.find((place) => {
+    return place.id === id;
   })
 );
 
 function App() {
-
   const modal = useRef();
   const selectedPlace = useRef();
   const [pickedPlaces, setPickedPlaces] = useState(storedPlace);
@@ -52,8 +49,8 @@ function App() {
       const place = AVAILABLE_PLACES.find((place) => place.id === id);
       return [place, ...prevPickedPlaces];
     });
-    const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
-    localStorage.setItem("selectedPlace", JSON.stringify([...storedIds, id]));
+    const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
+    localStorage.setItem("selectedPlaces", JSON.stringify([...storedIds, id]));
   }
 
   function handleRemovePlace() {
@@ -62,9 +59,9 @@ function App() {
     );
     modal.current.close();
 
-    const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
+    const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
     localStorage.setItem(
-      "selectedPlace",
+      "selectedPlaces",
       JSON.stringify(
         storedIds.filter((id) => {
           return id !== selectedPlace.current;

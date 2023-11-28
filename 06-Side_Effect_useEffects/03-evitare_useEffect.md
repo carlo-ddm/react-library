@@ -20,8 +20,8 @@ function handleSelectPlace(id) {
     return [place, ...prevPickedPlaces];
   });
 
-  const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
-  localStorage.setItem("selectedPlace", JSON.stringify([...storedIds, id]));
+  const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
+  localStorage.setItem("selectedPlaces", JSON.stringify([...storedIds, id]));
 }
 ```
 
@@ -30,19 +30,19 @@ function handleSelectPlace(id) {
 1. **Recupero dei Dati Precedenti:**
 
    ```javascript
-   const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
+   const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
    ```
 
-   - `localStorage.getItem("selectedPlace")`: Recupera i dati salvati in precedenza sotto la chiave `"selectedPlace"`. Se non ci sono dati, `getItem` restituisce `null`.
+   - `localStorage.getItem("selectedPlaces")`: Recupera i dati salvati in precedenza sotto la chiave `"selectedPlaces"`. Se non ci sono dati, `getItem` restituisce `null`.
    - `JSON.parse(...)`: Converte la stringa salvata in `localStorage` in un oggetto JavaScript (in questo caso, un array). Se non ci sono dati, il risultato del `parse` è `null`, quindi l'operatore `|| []` assicura che `storedIds` sia un array vuoto in quel caso.
 
 2. **Salvataggio dei Nuovi Dati:**
    ```javascript
-   localStorage.setItem("selectedPlace", JSON.stringify([...storedIds, id]));
+   localStorage.setItem("selectedPlaces", JSON.stringify([...storedIds, id]));
    ```
    - `[...storedIds, id]`: Crea un nuovo array contenente tutti gli ID precedenti più il nuovo `id`.
    - `JSON.stringify(...)`: Converte l'array in una stringa, poiché `localStorage` può salvare solo dati in formato stringa.
-   - `localStorage.setItem(...)`: Salva la stringa nel `localStorage` sotto la chiave `"selectedPlace"`.
+   - `localStorage.setItem(...)`: Salva la stringa nel `localStorage` sotto la chiave `"selectedPlaces"`.
 
 #### Conclusioni e Considerazioni
 
@@ -74,14 +74,14 @@ function handleSelectPlace(id) {
   // ...
 
   // Salvataggio degli ID nel localStorage
-  const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
-  localStorage.setItem("selectedPlace", JSON.stringify([...storedIds, id]));
+  const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
+  localStorage.setItem("selectedPlaces", JSON.stringify([...storedIds, id]));
 }
 ```
 
 ###### Spiegazione del Codice per il Salvataggio
 
-- **Recupero dei Dati Precedenti:** Si ottengono gli ID precedentemente salvati con `localStorage.getItem("selectedPlace")` e si convertono in un array con `JSON.parse`.
+- **Recupero dei Dati Precedenti:** Si ottengono gli ID precedentemente salvati con `localStorage.getItem("selectedPlaces")` e si convertono in un array con `JSON.parse`.
 - **Aggiornamento e Salvataggio:** Si aggiunge il nuovo `id` all'array e si salva nuovamente nel `localStorage` usando `localStorage.setItem`.
 
 ##### Rimozione di Elementi
@@ -91,9 +91,9 @@ Per rimuovere un elemento da `localStorage`, si recupera l'array di ID, si filtr
 ```javascript
 // Supponiamo che questa funzione venga chiamata per rimuovere un elemento
 function handleRemovePlace(selectedId) {
-  const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
+  const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
   const updatedIds = storedIds.filter((id) => id !== selectedId);
-  localStorage.setItem("selectedPlace", JSON.stringify(updatedIds));
+  localStorage.setItem("selectedPlaces", JSON.stringify(updatedIds));
 }
 ```
 
@@ -108,7 +108,7 @@ Per caricare i dati da `localStorage` all'avvio dell'applicazione, è possibile 
 
 ```javascript
 // All'inizio del componente App
-const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
+const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
 const storedPlaces = storedIds.map((id) =>
   AVAILABLE_PLACES.find((place) => place.id === id)
 );
@@ -152,7 +152,7 @@ Il codice per recuperare i dati da `localStorage` può essere posizionato all'es
 
 ```javascript
 // Fuori dalla funzione del componente App
-const storedIds = JSON.parse(localStorage.getItem("selectedPlace")) || [];
+const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
 const storedPlaces = storedIds.map((id) =>
   AVAILABLE_PLACES.find((place) => place.id === id)
 );
