@@ -18,10 +18,9 @@ function App() {
   const selectedPlace = useRef();
   const [pickedPlaces, setPickedPlaces] = useState(storedPlace);
   const [availablePlace, setAvailablePlace] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    console.log("check");
     navigator.geolocation.getCurrentPosition((position) => {
       const sortedPlace = sortPlacesByDistance(
         AVAILABLE_PLACES,
@@ -33,12 +32,12 @@ function App() {
   }, []);
 
   function handleStartRemovePlace(id) {
-    setIsModalOpen(true)
+    setIsModalOpen(true);
     selectedPlace.current = id;
   }
 
   function handleStopRemovePlace() {
-    false
+    setIsModalOpen(false);
   }
 
   function handleSelectPlace(id) {
@@ -57,7 +56,7 @@ function App() {
     setPickedPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
     );
-    setIsModalOpen(false)
+    setIsModalOpen(false);
 
     const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
     localStorage.setItem(

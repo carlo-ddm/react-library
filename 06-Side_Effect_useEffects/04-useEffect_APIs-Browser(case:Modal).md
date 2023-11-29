@@ -33,11 +33,25 @@ Nel componente `Modal`, la gestione dell'elemento di dialogo del browser si basa
 
    - La prop `open` del `Modal` è collegata all'attributo `open` dell'elemento di dialogo del browser.
 
-   ```javascript
-   const Modal = ({ open, children }) => {
-     return <dialog open={open}>{children}</dialog>;
-   };
-   ```
+```javascript
+function Modal({ open, children }) {
+  const dialog = useRef();
+
+  // l'if non funziona
+  if (open) {
+    dialog.current.showModal();
+  } else {
+    dialog.current.close();
+  }
+
+  return createPortal(
+    <dialog className="modal" ref={dialog} open={open}>
+      {children}
+    </dialog>,
+    document.getElementById("modal")
+  );
+}
+```
 
 #### Perché un Semplice `if` Statement Non è Sufficiente
 
@@ -109,14 +123,17 @@ Questa è una spiegazione dettagliata sull'uso delle dipendenze in `useEffect` i
 ### Dipendenze in `useEffect`
 
 #### Concetto di Dipendenze
+
 1. **Definizione delle Dipendenze**: Le dipendenze di un effetto (`useEffect`) sono valori di prop o di stato che vengono utilizzati all'interno della funzione effetto. Questi valori, se cambiano, causano la ri-esecuzione dell'effetto.
 
 2. **Ref e Valori Funzionali**: I refs (riferimenti) e altri valori funzionali, come i metodi del componente che sono incorporati nel browser, non sono considerati dipendenze per `useEffect`. Questo perché `useEffect` si concentra solo su quelle dipendenze che potrebbero causare una nuova esecuzione della funzione del componente.
 
 #### Funzionamento di `useEffect` Senza Dipendenze
+
 Nel caso di `useEffect` con un array di dipendenze vuoto (`[]`), la funzione effetto viene eseguita solo una volta, dopo il primo rendering del componente. Questo perché non ci sono dipendenze che possono cambiare e causare ri-esecuzioni.
 
 #### Applicazione nel Componente `Modal`
+
 1. **Utilizzo del Prop `open`**: Nel componente `Modal`, la prop `open` viene utilizzata nella funzione effetto. Questo valore può cambiare nel corso della vita del componente, ad esempio, passando da `false` a `true`.
 
 2. **Necessità di Aggiungere `open` come Dipendenza**:
@@ -124,4 +141,5 @@ Nel caso di `useEffect` con un array di dipendenze vuoto (`[]`), la funzione eff
    - Inserendo `open` nell'array di dipendenze, si garantisce che ogni volta che il valore di `open` cambia, la funzione effetto venga ri-eseguita. Questo permette di rispondere dinamicamente ai cambiamenti dello stato del componente e gestire correttamente l'apertura e la chiusura della finestra di dialogo.
 
 #### Risultato Finale
+
 Con l'inclusione corretta delle dipendenze, `useEffect` permette di gestire l'apertura e la chiusura del `Modal` in modo più efficace e snello. Questo approccio rende il componente `Modal` più reattivo e sincronizzato con le prop e lo stato del componente `App`, garantendo una migliore esperienza utente e una programmazione più pulita e organizzata.

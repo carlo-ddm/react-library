@@ -14,7 +14,7 @@ import { useEffect } from "react";
 
 `useEffect` accetta due parametri:
 
-1. **Funzione di Callback:** Questa funzione avvolge il side effect. Viene eseguita dopo il completamento del rendering del componente.
+1. **Funzione di Callback:** Questa funzione avvolge il side effect. Viene eseguita dopo il completamento del rendering del jsx del componente.
 2. **Array di Dipendenze:** Un array che determina quando la funzione di callback deve essere rieseguita.
 
 Ecco come potrebbe essere implementato nel componente `App`:

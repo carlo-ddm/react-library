@@ -20,3 +20,5 @@ function Modal({ open, children }) {
 }
 
 export default Modal;
+
+// L'attributo open sull'elemento dialog determina se il dialog è presente nel DOM, non se è visibile. I metodi showModal() e close() invece, vengono utilizzati per controllare la visibilità del dialog.
