@@ -1,5 +1,3 @@
-Basandoci sul codice e sulla descrizione forniti, ora esamineremo come un componente può interagire con lo stato in modo non solo di lettura ma anche di scrittura attraverso il Context API in React. Questo include l'aggiunta di funzioni al contesto per modificare lo stato, come dimostrato nell'esempio del componente `Product`.
-
 ### Estensione del Context per Includere Funzioni di Modifica dello Stato
 
 #### Aggiunta di Metodi al Contesto

@@ -1,5 +1,3 @@
-Capisco, procederò a riscrivere la documentazione includendo entrambi gli scopi del valore di default in `createContext`.
-
 ### Creazione e Impostazione del Context in React
 
 #### Importazione e Creazione del Context

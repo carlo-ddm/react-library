@@ -1,5 +1,3 @@
-Basandomi sul codice fornito e sulla descrizione del flusso, procederò a spiegare il concetto del "link allo stato" nel contesto di React, utilizzando il Context API.
-
 ### Link allo Stato con il Context API in React
 
 Il "link allo stato" in React utilizza il Context API per condividere e gestire lo stato dell'applicazione tra componenti diversi. Questa pratica consente di mantenere lo stato in un unico luogo e di accedervi o modificarlo da diversi punti dell'applicazione.
