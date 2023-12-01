@@ -4,6 +4,8 @@
 
 import { useState } from "react";
 import QUESTIONS from "../questions";
+import quizCompletImg from "../assets/quiz-complete.png";
+import QuestionTimer from "./QuestionTimer";
 
 export default function Quiz() {
   // console.log(question);
@@ -12,9 +14,7 @@ export default function Quiz() {
   // Se nell'array ho due rispsote memorizzate, allora la terza domanda sarà quella presentatsa all'utente, cioè la domanda con indice 2 (perché gli indici di un array partono da 0)
   const [userAnswers, setUserAnswers] = useState([]);
   const activeQuestionIndex = userAnswers.length;
-  console.log(userAnswers);
-
-  // QUESTIONS.LENGTH = 6
+  const quizIsComplete = QUESTIONS.length === userAnswers.length;
 
   function handleSelectAnswer(selectedAnswer) {
     setUserAnswers((prevState) => {
@@ -23,18 +23,32 @@ export default function Quiz() {
     });
   }
 
+  if (quizIsComplete) {
+    return (
+      <div id="summary">
+        <img src={quizCompletImg} alt="Trophy Icon" />
+        <h2>Quiz Completed!</h2>
+      </div>
+    );
+  }
+  // La logica di mescolamento delle domande fallirebbe se fosse spostata sopra la produzione del componente che creo con l'if perché non verrebbe trovata più alcuna domanda.
+  const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers];
+  shuffledAnswers.sort(() => Math.random() - 0.5);
+
   return (
     <div id="quiz">
       <div id="question">
-        <p>{QUESTIONS[activeQuestionIndex].text}</p>
-
+        <QuestionTimer timeout={10000} onTimeout={() => handleSelectAnswer(null)} />
+        <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id="answers">
-          {QUESTIONS[activeQuestionIndex].answers.map((answer) => {
-            <li key={answer} className="answer">
-              <button onClick={() => handleSelectAnswer(answer)}>
-                {answer}
-              </button>
-            </li>;
+          {shuffledAnswers.map((answer) => {
+            return (
+              <li key={answer} className="answer">
+                <button onClick={() => handleSelectAnswer(answer)}>
+                  {answer}
+                </button>
+              </li>
+            );
           })}
         </ul>
       </div>
