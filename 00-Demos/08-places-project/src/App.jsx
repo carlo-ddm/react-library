@@ -6,6 +6,7 @@ import DeleteConfirmation from "./components/DeleteConfirmation.jsx";
 import logoImg from "./assets/logo.png";
 import { sortPlacesByDistance } from "./loc.js";
 import { useEffect } from "react";
+import { useCallback } from "react";
 
 const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
 const storedPlace = storedIds.map((id) =>
@@ -52,7 +53,7 @@ function App() {
     localStorage.setItem("selectedPlaces", JSON.stringify([...storedIds, id]));
   }
 
-  function handleRemovePlace() {
+  const handleRemovePlace = useCallback(function handleRemovePlace() {
     setPickedPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
     );
@@ -67,7 +68,7 @@ function App() {
         })
       )
     );
-  }
+  }, []);
 
   return (
     <>
