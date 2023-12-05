@@ -1,3 +1,5 @@
+[Summary](../Summary.md)
+
 # Documentazione: Gestione Efficace dei Componenti in File Separati in React
 
 ## Introduzione
