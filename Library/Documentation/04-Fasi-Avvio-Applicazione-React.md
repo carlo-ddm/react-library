@@ -1,6 +1,6 @@
 [Summary](../Summary.md)
 
-# Documentazione: Avvio di un'Applicazione React
+# `Documentazione: Avvio di un'Applicazione React`
 
 ## Introduzione
 

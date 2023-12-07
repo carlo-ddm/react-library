@@ -1,4 +1,6 @@
-# Documentazione: Generazione Dinamica di Elementi Lista in React
+[Summary](../Summary.md)
+
+# `Documentazione: Generazione Dinamica di Elementi Lista in React`
 
 ## Introduzione alla Generazione Dinamica di Liste
 

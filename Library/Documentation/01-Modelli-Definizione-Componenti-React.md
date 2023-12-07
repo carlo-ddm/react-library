@@ -1,6 +1,6 @@
 [Summary](../Summary.md)
 
-# Documentazione sui Modelli di Definizione dei Componenti in React
+# `Documentazione sui Modelli di Definizione dei Componenti in React`
 
 ## Introduzione
 Nello sviluppo con React, esistono diversi modelli per definire i componenti. Questa documentazione esamina quattro modelli comuni, illustrando come ciascuno di essi possa essere utilizzato in base a esigenze specifiche.

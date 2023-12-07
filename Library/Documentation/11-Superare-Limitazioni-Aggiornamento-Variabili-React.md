@@ -1,4 +1,6 @@
-# Documentazione: Gestione dello `State` e Aggiornamento delle Variabili nei Componenti React
+[Summary](../Summary.md)
+
+# `Documentazione: Gestione dello State e Aggiornamento delle Variabili nei Componenti React`
 
 ## Introduzione alle Limitazioni nell'Aggiornamento delle Variabili
 

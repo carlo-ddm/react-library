@@ -1,6 +1,6 @@
-Hai perfettamente ragione, mi scuso per l'errore. Ecco la documentazione riveduta sulla rendering condizionale in React come un documento separato, con il titolo del documento e il nome del file.
+[Summary](../Summary.md)
 
-# Documentazione: Principi e Tecniche del Rendering Condizionale in React
+# `Documentazione: Principi e Tecniche del Rendering Condizionale in React`
 
 ## Introduzione al Rendering Condizionale in React
 

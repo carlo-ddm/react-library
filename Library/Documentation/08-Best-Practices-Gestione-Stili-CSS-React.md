@@ -1,6 +1,6 @@
 [Summary](../Summary.md)
 
-# Documentazione: Gestione Efficace dei Fogli di Stile CSS in Progetti React
+# `Documentazione: Gestione Efficace dei Fogli di Stile CSS in Progetti React `
 
 ## Introduzione alla Suddivisione dei File CSS
 

@@ -1,6 +1,6 @@
 [Summary](../Summary.md)
 
-# Documentazione: Definizione di Componenti Multipli in un Singolo File JSX
+# `Documentazione: Definizione di Componenti Multipli in un Singolo File JSX`
 
 ## Introduzione
 

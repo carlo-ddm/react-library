@@ -1,6 +1,6 @@
 [Summary](../Summary.md)
 
-# Documentazione: Generazione di Contenuti Dinamici in JSX
+# `Documentazione: Generazione di Contenuti Dinamici in JSX`
 
 ## Introduzione
 

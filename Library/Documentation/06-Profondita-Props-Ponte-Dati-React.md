@@ -1,6 +1,6 @@
 [Summary](../Summary.md)
 
-# Documentazione: Comprendere le Props in React
+# `Documentazione: Comprendere le Props in React`
 
 ## Introduzione alle Props in React
 
@@ -101,9 +101,11 @@ Dopo aver approfondito la definizione e l'utilizzo delle props in React, esamini
 ## Passaggio Esplicito delle Props
 
 ### Descrizione
+
 Nel passaggio esplicito, ogni prop viene passata individualmente al componente. Questo metodo è più descrittivo e consente una chiara comprensione delle props trasmesse.
 
 ### Esempio
+
 ```jsx
 <CoreConcepts
   title={CORE_CONCEPTS[0].title}
@@ -113,6 +115,7 @@ Nel passaggio esplicito, ogni prop viene passata individualmente al componente. 
 ```
 
 ### Vantaggi
+
 - Maggiore trasparenza su quali dati vengono passati.
 - Più facile da debuggare.
 - Ideale per un numero limitato di props.
@@ -122,14 +125,17 @@ Nel passaggio esplicito, ogni prop viene passata individualmente al componente. 
 ## Utilizzo dello Spread Operator
 
 ### Descrizione
+
 Con lo spread operator (`...`), tutte le proprietà di un oggetto vengono passate come props separate. Questo approccio è più compatto.
 
 ### Esempio
+
 ```jsx
 <CoreConcepts {...CORE_CONCEPTS[1]} />
 ```
 
 ### Vantaggi e Svantaggi
+
 - **Vantaggi**: Sintassi più concisa, ideale per passare molte props.
 - **Svantaggi**: Potenzialmente meno chiaro, può passare props non necessarie, rendendo il debug più difficile.
 
@@ -138,11 +144,8 @@ Con lo spread operator (`...`), tutte le proprietà di un oggetto vengono passat
 ## Punti da Considerare
 
 1. **Riusabilità & Manutenibilità**: Lo spread operator può passare involontariamente props extra, influenzando la manutenibilità.
-   
 2. **Performance**: La differenza prestazionale è minima, ma lo spread operator può forzare render aggiuntivi se l'oggetto props cambia.
-   
 3. **Typing in TypeScript**: Il passaggio esplicito delle props facilita l'uso del sistema di tipi in TypeScript.
-   
 4. **Debugging**: Il passaggio esplicito rende più semplice tracciare quali props vengono utilizzate.
 
 ---
