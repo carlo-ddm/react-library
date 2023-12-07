@@ -1,4 +1,4 @@
-[Torna al sommario](../Summary.md)
+[Torna al sommario](../../Summary.md)
 
 # `Documentazione: Principi e Tecniche del Rendering Condizionale in React`
 

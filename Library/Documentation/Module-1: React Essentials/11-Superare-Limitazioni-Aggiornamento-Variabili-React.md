@@ -1,4 +1,4 @@
-[Torna al sommario](../Summary.md)
+[Torna al sommario](../../Summary.md)
 
 # `Documentazione: Gestione dello State e Aggiornamento delle Variabili nei Componenti React`
 

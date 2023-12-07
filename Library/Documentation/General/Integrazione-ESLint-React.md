@@ -1,3 +1,5 @@
+[Torna al sommario](../../Summary.md)
+
 # Documentazione: Integrazione di ESLint in un Progetto React
 
 ## Introduzione a ESLint

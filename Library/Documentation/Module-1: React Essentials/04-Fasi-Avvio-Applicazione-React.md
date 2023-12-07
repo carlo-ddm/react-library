@@ -1,4 +1,4 @@
-[Torna al sommario](../Summary.md)
+[Torna al sommario](../../Summary.md)
 
 # `Documentazione: Avvio di un'Applicazione React`
 

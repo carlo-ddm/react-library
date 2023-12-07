@@ -1,3 +1,5 @@
+[Torna al sommario](../../Summary.md)
+
 ### Documentazione: Component Composition come Alternativa a `memo` per l'Ottimizzazione delle Prestazioni in React
 
 #### Introduzione

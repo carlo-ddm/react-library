@@ -1,4 +1,4 @@
-[Torna al sommario](../Summary.md)
+[Torna al sommario](../../Summary.md)
 
 # `Documentazione: Ottimizzazione con 'memo' in React`
 

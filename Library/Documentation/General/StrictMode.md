@@ -1,3 +1,5 @@
+[Torna al sommario](../../Summary.md)
+
 ### Documentazione: Implementazione dello Strict Mode in React
 
 #### Introduzione
