@@ -1,4 +1,4 @@
-[Summary](../Summary.md)
+[Torna al sommario](../Summary.md)
 
 # `Documentazione: Generazione di Contenuti Dinamici in JSX`
 

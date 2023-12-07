@@ -1,4 +1,4 @@
-[Summary](../Summary.md)
+[Torna al sommario](../Summary.md)
 
 # `Documentazione su JSX (JavaScript XML) in React`
 

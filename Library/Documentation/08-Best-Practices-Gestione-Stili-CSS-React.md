@@ -1,4 +1,4 @@
-[Summary](../Summary.md)
+[Torna al sommario](../Summary.md)
 
 # `Documentazione: Gestione Efficace dei Fogli di Stile CSS in Progetti React `
 

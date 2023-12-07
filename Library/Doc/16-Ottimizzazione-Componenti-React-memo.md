@@ -1,6 +1,6 @@
-[Summary](../Summary.md)
+[Torna al sommario](../Summary.md)
 
-# Documentazione: Ottimizzazione con `memo` in React
+# `Documentazione: Ottimizzazione con 'memo' in React`
 
 In questa documentazione, esploriamo il concetto di `memo` in React, un metodo di ottimizzazione per i componenti funzionali. Analizzeremo come funziona e come può essere utilizzato in un'applicazione React.
 
@@ -70,8 +70,6 @@ L'utilizzo di `memo` in React è un modo efficace per ottimizzare le prestazioni
 
 ---
 
-## Riferimenti
+## Progetto di Riferimento
 
-[App.jsx: 10-React - Behind The Scenes](../Demo/10-React%20-%20Behind%20The%20Scenes/src/App.jsx)
-
-[Counter.jsx: 10-React - Behind The Scenes](../Demo/10-React%20-%20Behind%20The%20Scenes/src/components/Counter/Counter.jsx)
+[App.jsx: 10-React - Behind The Scenes](../Demo/10-React%20-%20Behind%20The%20Scenes/src/)
