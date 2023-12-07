@@ -115,6 +115,7 @@ Dopo aver esplorato come inserire contenuti dinamici in JSX, è importante compr
 ## Concetto Base degli Attributi Dinamici
 
 ### Descrizione
+
 Gli attributi dinamici in JSX permettono di assegnare valori agli attributi degli elementi JSX in base a condizioni, dati o logica specifica. Si utilizzano le parentesi graffe `{}` per inserire espressioni JavaScript negli attributi, proprio come si fa con i contenuti.
 
 ---
@@ -122,12 +123,14 @@ Gli attributi dinamici in JSX permettono di assegnare valori agli attributi degl
 ## Sintassi degli Attributi Dinamici
 
 ### Esempio
+
 ```jsx
 const buttonStyle = "btn-primary";
 return <button className={buttonStyle}>Click Me</button>;
 ```
 
 ### Spiegazione
+
 Qui, il valore dell'attributo `className` viene impostato dinamicamente dalla variabile `buttonStyle`.
 
 ---
@@ -135,30 +138,35 @@ Qui, il valore dell'attributo `className` viene impostato dinamicamente dalla va
 ## Tipi di Dati Supportati negli Attributi
 
 1. **Stringhe e Variabili**
+
    ```jsx
    const imageUrl = "/path/to/image.jpg";
    return <img src={imageUrl} alt="Description" />;
    ```
 
 2. **Numeri**
+
    ```jsx
    const width = 300;
    return <img width={width} />;
    ```
 
 3. **Espressioni Booleane**
+
    ```jsx
    const isActive = true;
    return <button disabled={!isActive}>Click Me</button>;
    ```
 
 4. **Funzioni**
+
    ```jsx
    const getTitle = () => "Clicca qui";
    return <button title={getTitle()}>Click</button>;
    ```
 
 5. **Espressioni Ternarie**
+
    ```jsx
    const isEnabled = true;
    return (
@@ -168,7 +176,7 @@ Qui, il valore dell'attributo `className` viene impostato dinamicamente dalla va
 
 6. **Importazione e Uso Dinamico di Immagini**
    ```jsx
-   import reactImg from './assets-core-concepts.png';
+   import reactImg from "./assets-core-concepts.png";
    return <img src={reactImg} alt="Stylized atom" />;
    ```
 
@@ -183,8 +191,5 @@ Qui, il valore dell'attributo `className` viene impostato dinamicamente dalla va
 ---
 
 ## Conclusione
+
 L'integrazione di attributi dinamici in JSX, combinata con l'inserimento di contenuti dinamici, offre una flessibilità significativa nella creazione di componenti React. Questa capacità di manipolare sia i contenuti che gli attributi in modo dinamico rende JSX uno strumento estremamente potente nello sviluppo di interfacce utente reattive e interattive.
-
----
-
-**Titolo del Documento:** "Incorporazione di Contenuti Dinamici in JSX"

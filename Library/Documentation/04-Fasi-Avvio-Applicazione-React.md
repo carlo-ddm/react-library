@@ -81,7 +81,3 @@ Il metodo `render()` viene invocato sull'oggetto 'root'. In questo momento, il c
 ## Conclusione
 
 Questi passaggi rappresentano il flusso tipico di avvio di un'applicazione React, dalla preparazione dell'ambiente di rendering all'inserimento del componente radice nel DOM. Questo processo è fondamentale per il funzionamento delle applicazioni React, fornendo la base su cui si costruisce l'interfaccia utente.
-
----
-
-**Titolo del Documento:** "Fasi di Avvio di un'Applicazione React"

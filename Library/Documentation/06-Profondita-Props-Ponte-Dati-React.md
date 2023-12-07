@@ -153,7 +153,3 @@ Con lo spread operator (`...`), tutte le proprietà di un oggetto vengono passat
 ## Conclusione
 
 Entrambi i metodi di passaggio delle props hanno vantaggi e svantaggi. Mentre lo spread operator offre una sintassi più pulita e rapida per passare numerose props, il passaggio esplicito fornisce maggiore chiarezza e controllo. La scelta tra i due dipenderà dalle esigenze specifiche del progetto e dalle preferenze di sviluppo.
-
----
-
-**Titolo del Documento:** "Profondità delle Props: Il Ponte di Dati tra Componenti in React"
