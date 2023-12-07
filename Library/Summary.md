@@ -31,8 +31,10 @@
 `14: ` [Ottimizzazione delle Liste in React: Generazione Dinamica e Gestione delle Chiavi](./Documentation/14-Ottimizzazione-Liste-React.md)
 
 ---
-Provvisori:
+# Provvisori:
 
 `16: ` [Ottimizzazione dei Componenti in React con memo](./Doc/16-Ottimizzazione-Componenti-React-memo.md)
 
-`00: ` []()
+---
+# Extra:
+`Extra 1: ` [Guida all'Integrazione di ESLint in Progetti React](../Integrazione-ESLint-React.md)
