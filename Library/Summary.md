@@ -30,34 +30,9 @@
 
 `14: ` [Ottimizzazione delle Liste in React: Generazione Dinamica e Gestione delle Chiavi](./Documentation/14-Ottimizzazione-Liste-React.md)
 
-`15: ` []()
+---
+Provvisori:
 
-`16: ` []()
+`16: ` [Ottimizzazione dei Componenti in React con memo](./Doc/16-Ottimizzazione-Componenti-React-memo.md)
 
-`17: ` []()
-
-`18: ` []()
-
-`19: ` []()
-
-`20: ` []()
-
-`21: ` []()
-
-`22: ` []()
-
-`23: ` []()
-
-`24: ` []()
-
-`25: ` []()
-
-`26: ` []()
-
-`27: ` []()
-
-`28: ` []()
-
-`29: ` []()
-
-`30: ` []()
+`00: ` []()
