@@ -88,6 +88,7 @@ Dopo aver esplorato i fondamenti della gestione degli eventi in React, approfond
 ## Utilizzo delle Funzioni Freccia negli Event Handler
 
 ### Esempio Pratico
+
 ```jsx
 function clickHandler(message) {
   console.log(message);
@@ -105,9 +106,11 @@ In questo esempio, una funzione freccia viene utilizzata nell'evento `onClick` d
 ## Vantaggi dell'Uso delle Funzioni Freccia
 
 ### Flessibilità
+
 Questo approccio consente di passare facilmente argomenti personalizzati agli handler degli eventi, rendendo il codice più flessibile e riutilizzabile.
 
 ### Semplicità
+
 La sintassi delle funzioni freccia è concisa e leggibile, facilitando la comprensione del flusso degli eventi e dei dati all'interno dei componenti.
 
 ---
@@ -165,6 +168,95 @@ In questo contesto, l'uso di funzioni freccia permette di distinguere facilmente
 ## Conclusione
 
 L'uso delle funzioni freccia per passare argomenti agli event handler in React è una tecnica potente che aumenta la flessibilità e la chiarezza del codice. Questo approccio è particolarmente utile in scenari dove si necessita di passare dati specifici o distinguere tra diversi eventi all'interno di un componente.
+
+---
+
+# Integrazione Documentazione: Passaggio di Metodi tramite Props in React
+
+Dopo aver approfondito la gestione degli eventi e il passaggio di funzioni in React, esploriamo ora come queste pratiche si intersecano e vengono applicate nella comunicazione tra componenti genitore e figlio.
+
+## Interazione tra Gestione degli Eventi e Passaggio di Informazioni tramite Props
+
+### Principi di Base
+
+1. **Passaggio di Metodi come Props**: In React, è comune per un componente genitore passare metodi ai componenti figli tramite props. Questo crea un canale di comunicazione bidirezionale, permettendo ai componenti figli di "notificare" o "rispondere" al genitore in base a eventi o azioni specifiche.
+
+2. **Doppio Ruolo delle Props**: Le props fungono sia da mezzo per trasmettere dati (inclusi metodi) che per gestire gli eventi. Questo approccio unifica la comunicazione e la gestione degli eventi in un flusso di lavoro coesivo.
+
+### Esempio Pratico nel Codice Fornito
+
+**Componente Genitore:**
+
+```jsx
+function App() {
+  const clickHandler = (message) => {
+    console.log("Messaggio dal figlio:", message);
+  };
+
+  return <TapButton onSelect={clickHandler}>Click Me</TapButton>;
+}
+```
+
+**Componente Figlio:**
+
+```jsx
+function TapButton({ children, onSelect }) {
+  return (
+    <button onClick={() => onSelect("Il bottone è stato cliccato!")}>
+      {children}
+    </button>
+  );
+}
+```
+
+In questo esempio, `App` passa `clickHandler` a `TapButton` tramite la prop `onSelect`. Quando l'utente clicca il bottone, `clickHandler` in `App` viene eseguito, ricevendo il messaggio dal componente figlio.
+
+## Due Modelli di Utilizzo del Metodo Passato
+
+### 1. Associazione Diretta dell'Evento
+
+**Esempio di Associazione Diretta:**
+
+```jsx
+function ParentComponent() {
+  const directHandler = () => {
+    console.log("Azione diretta dal genitore");
+  };
+
+  return <ChildComponent onAction={directHandler} />;
+}
+
+function ChildComponent({ onAction }) {
+  return <button onClick={onAction}>Azione</button>;
+}
+```
+
+Qui, `directHandler` è direttamente collegato all'evento `onClick` di `ChildComponent`. Il figlio agisce come un trigger per il metodo genitore senza manipolare l'evento.
+
+### 2. Avvio di Funzioni con Parametri nel Componente Figlio
+
+**Esempio con Parametri Specifici:**
+
+```jsx
+function ParentComponent() {
+  const parametrizedHandler = (data) => {
+    console.log("Dati dal figlio:", data);
+  };
+
+  return <ChildComponent onAction={parametrizedHandler} />;
+}
+
+function ChildComponent({ onAction }) {
+  const specificData = "Dati specifici";
+  return <button onClick={() => onAction(specificData)}>Azione</button>;
+}
+```
+
+In questo caso, `ChildComponent` controlla quando e con quali dati chiamare `parametrizedHandler` del genitore. Questo metodo permette al figlio di passare dati specifici al genitore, consentendo una comunicazione più dettagliata e controllata.
+
+## Conclusione
+
+Il passaggio di metodi tramite props è un modello essenziale in React che consente ai componenti di interagire efficacemente. Sia che si tratti di una semplice notifica di evento o di una comunicazione più complessa con dati specifici, questo approccio promuove una chiara separazione delle responsabilità, flessibilità e riutilizzabilità dei componenti. Capire quando e come utilizzare questi modelli è fondamentale per costruire applicazioni React scalabili e mantenibili.
 
 ---
 

@@ -63,7 +63,7 @@
 - Uso delle parentesi `()` nelle funzioni handler e tecniche per passare argomenti specifici agli event handler, come l'uso delle funzioni freccia.
 - Vantaggi dell'uso delle funzioni freccia negli event handler per maggiore flessibilità e chiarezza del codice.
 
-`11: ` []()
+`11: ` [Superare le Limitazioni dell'Aggiornamento delle Variabili in React: Una Guida allo State](./Documentation/11-Superare-Limitazioni-Aggiornamento-Variabili-React.md)
 
 `12: ` []()
 
