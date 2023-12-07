@@ -67,9 +67,3 @@ Nel contesto di `App`, l'utilizzo di `memo` in `Counter` garantisce che il compo
 ## Conclusioni
 
 L'utilizzo di `memo` in React è un modo efficace per ottimizzare le prestazioni delle applicazioni, specialmente in scenari con molti componenti o con componenti che ricevono props complesse. Attraverso la memorizzazione dei risultati del render e la valutazione intelligente delle props, `memo` aiuta a ridurre i re-render non necessari, migliorando così l'efficienza complessiva dell'applicazione.
-
----
-
-## Progetto di Riferimento
-
-[10-React - Behind The Scenes](../Demo/10-%20React%20-%20Behind%20The%20Scenes/)
