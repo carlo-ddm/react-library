@@ -72,4 +72,4 @@ L'utilizzo di `memo` in React è un modo efficace per ottimizzare le prestazioni
 
 ## Progetto di Riferimento
 
-[App.jsx: 10-React - Behind The Scenes](../Demo/10-React%20-%20Behind%20The%20Scenes/src/)
+[10-React - Behind The Scenes](../Demo/10-%20React%20-%20Behind%20The%20Scenes/)
