@@ -40,7 +40,11 @@
 
 `2: ` [Ottimizzazione delle Prestazioni in React: Il Component Composition come Alternativa a memo](./Documentation/Module-x:%20Behind%20the%20Scenes/02-React-Performance-Component-Composition.md)
 
-`3: ` ["Ottimizzazione del Rendering in React: Integrazione di useCallback con memo](./Documentation/Module-x:%20Behind%20the%20Scenes/03-Ottimizzazione-Rendering-React-useCallback.md)
+`3: ` [Ottimizzazione del Rendering in React: Integrazione di useCallback con memo](./Documentation/Module-x:%20Behind%20the%20Scenes/03-Ottimizzazione-Rendering-React-useCallback.md)
+
+`4: ` [Guida Avanzata all'Uso di useMemo e useCallback in React](./Documentation/Module-x:%20Behind%20the%20Scenes/04-Guida-UseMemo-UseCallback-React.md)
+
+`5: ` [Comprensione dei Componenti e del Virtual DOM in React: Un Approccio per l'Ottimizzazione delle Prestazioni](./Documentation/Module-x:%20Behind%20the%20Scenes/05-Componenti-Virtual-DOM-React.md)
 
 ---
 
