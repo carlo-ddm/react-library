@@ -34,6 +34,16 @@
 
 ---
 
+## `Module 2: ` Deep Dive
+
+`1: ` [I Fragment in React: Un Approccio per un DOM Pulito e Performante](./Documentation/Module-2:%20Deep%20Dive/01-Fragment-React.md)
+
+`2: ` [Gestione Efficace delle Props in React: Forwarded Props e Proxy Props](./Documentation/Module-2:%20Deep%20Dive/02-Proxy-Props-React.md)
+
+`3: ` []()
+
+---
+
 ## `Module x: ` Behind the Scenes
 
 `1: ` [Ottimizzazione dei Componenti in React con memo](./Documentation/Module-x:%20Behind%20the%20Scenes/01-Ottimizzazione-Componenti-React-memo.md)
@@ -44,7 +54,9 @@
 
 `4: ` [Guida Avanzata all'Uso di useMemo e useCallback in React](./Documentation/Module-x:%20Behind%20the%20Scenes/04-Guida-UseMemo-UseCallback-React.md)
 
-`5: ` [Comprensione dei Componenti e del Virtual DOM in React: Un Approccio per l'Ottimizzazione delle Prestazioni](./Documentation/Module-x:%20Behind%20the%20Scenes/05-Componenti-Virtual-DOM-React.md)
+`5: ` [Virtual DOM in React: Come Funziona e Perché è Importante](./Documentation//Module-x:%20Behind%20the%20Scenes/05-Virtual-DOM-React.md)
+
+`6: ` [Gestione Avanzata dello Stato e Rendering in React](./Documentation/Module-x:%20Behind%20the%20Scenes/06-Gestione-Stato-Rendering-React.md)
 
 ---
 
