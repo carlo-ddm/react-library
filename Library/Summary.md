@@ -58,6 +58,12 @@
 
 `6: ` [Gestione Avanzata dello Stato e Rendering in React](./Documentation/Module-x:%20Behind%20the%20Scenes/06-Gestione-Stato-Rendering-React.md)
 
+`07: ` [Ripristino e Reinizializzazione dei Componenti in React tramite Chiavi](./Documentation/Module-x:%20Behind%20the%20Scenes/07-Reset-Componenti-Chiavi-React.md)
+
+`08: ` [Asincronia e Ottimizzazione negli Aggiornamenti dello Stato in React](./Documentation/Module-x:%20Behind%20the%20Scenes/08-Asincronia-Ottimizzazione-Stato-React.md)
+
+`09: ` [Ottimizzazione delle Prestazioni in React con Million.js](./Documentation/Module-x:%20Behind%20the%20Scenes/09-Ottimizzazione-Prestazioni-React-Million-js.md)
+
 ---
 
 # Extra:

@@ -1,3 +1,5 @@
+[Torna al sommario](../../Summary.md)
+
 # Documentazione: Il Virtual DOM e l'Ottimizzazione del Rendering in React
 
 ## Introduzione al Virtual DOM in React
